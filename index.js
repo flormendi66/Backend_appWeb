@@ -12,9 +12,6 @@ app.use(cors());
 
 const port = process.env.PORT || 3001;
 
-app.get('/', (req, res) => {
-    res.send('Hello from Express on Vercel!');
-});
 
 app.use('/propiedades', routerPropiedades);
 
