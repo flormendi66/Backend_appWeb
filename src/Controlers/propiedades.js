@@ -19,7 +19,7 @@ const url = process.env.URL;
 //trae propiedades
 const getProperties = async(req, res) => { 
     const {limit, offset, operacion, tipo, precioMin, precioMax} = req.query; 
-
+console.log("data:", req.query);
     try {
         let resp;
         let total;
@@ -31,7 +31,7 @@ const getProperties = async(req, res) => {
             resp = await axios.get(`${url}&key=${apiKey}`);
         }        
         //normalizo data q me llega
-        total = resp.data.meta.total_count;        
+        total = resp.data.meta.total_count;         
         propiedades = normalizaProps(resp.data.objects); 
 
         // Filtros
@@ -55,6 +55,9 @@ const getProperties = async(req, res) => {
                 )
             );
         }
+
+        //actualizo total
+        total = propiedades.length;
 
         res.json({
             total,
