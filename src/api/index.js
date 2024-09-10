@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 dotenv.config(); //colocarlo ACÁ!!!!
 //import rutas
-const routerPropiedades = require('./Routes/propiedades');
+const routerPropiedades = require('../Routes/propiedades');
 
 const app = express();
 
