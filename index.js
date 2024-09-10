@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 dotenv.config(); //colocarlo ACÁ!!!!
 //import rutas
-const routerPropiedades = require('../Routes/propiedades');
+const routerPropiedades = require('./src/Routes/propiedades');
 
 const app = express();
 
@@ -15,6 +15,7 @@ const port = process.env.PORT || 3001;
 app.get('/', (req, res) => {
     res.send('Hello from Express on Vercel!');
 });
+
 app.use('/propiedades', routerPropiedades);
 
 app.listen(port, () => {
