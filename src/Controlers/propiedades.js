@@ -19,7 +19,6 @@ const url = process.env.URL;
 //trae propiedades
 const getProperties = async(req, res) => { 
     const {limit, offset, operacion, tipo, precioMin, precioMax} = req.query; 
-console.log("dataFront:", req.query)
     try {
         let resp;
         let total; //total = resp.data.meta.total_count;
@@ -58,8 +57,7 @@ console.log("dataFront:", req.query)
                     })
                 )
             );
-        }
-        
+        }        
         
         total = propiedades.length;
         

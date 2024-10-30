@@ -12,9 +12,11 @@ app.use(cors());
 
 const port = process.env.PORT || 3001;
 
-app.get('/', (req, res) => {
-    res.send('Hello from Express on google!');
+//ruta para el archivo cron.yaml
+app.get('/ping', (req, res) => {
+    res.status(200).send('OK');
 });
+
 
 app.use('/propiedades', routerPropiedades);
 
