@@ -66,7 +66,7 @@ const normalizaProps = (propiedades) => {
             supSemiCub: supSemiCub,
             supDescubierta: supDescubierta,
             supTotal: supTotal,
-            //supÑote: p.surface,          
+            supÑote: p.surface,          
             unidadMedida: p.surface_measurement, /* M2 o HA(hectarea) SOLO p/lotes*/
             tipo: {
                 codigo: p.type.code,
@@ -153,7 +153,7 @@ const normalizoPropiedad = (p) => {
         supSemiCub: supSemiCub,
         supDescubierta: supDescubierta,
         supTotal: supTotal,
-        //supÑote: p.surface,
+        supÑote: p.surface,
         unidadMedida: p.surface_measurement, /* M2 o HA(hectarea) SOLO p/lotes*/
         tipo: {
             codigo: p.type.code,
