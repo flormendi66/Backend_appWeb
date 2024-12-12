@@ -10,7 +10,6 @@ const { normalizaProps, normalizoPropiedad } = require('../Helpers/normalizaProp
     "previous": null,
     "total_count": 5
 },
-
 */
 
 const apiKey = process.env.API_KEY;
