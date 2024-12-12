@@ -176,7 +176,7 @@ const normalizoPropiedad = (p) => {
         videos: p.videos,
     }
     return newProp;
-};
+}
 
 
 module.exports = {
