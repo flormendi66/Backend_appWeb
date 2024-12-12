@@ -1,5 +1,16 @@
+//función recibe 99.00 retorna 99
+const normalizaMetrosCuadrados = (metros) => {
+    const num = metros.split('.')[0];
+    return num;
+}
+
 const normalizaProps = (propiedades) => {
     const newArray = propiedades.map(p => {
+        const supCubierta = normalizaMetrosCuadrados(p.roofed_surface);
+        const supSemiCub = normalizaMetrosCuadrados(p.semiroofed_surface);
+        const supDescubierta = normalizaMetrosCuadrados(p.unroofed_surface);
+        const supTotal = normalizaMetrosCuadrados(p.total_surface);
+
         const newProp = {
             id: p.id,
             codigoReferencia: p.reference_code,
@@ -51,11 +62,11 @@ const normalizaProps = (propiedades) => {
             ambientes: p.room_amount,
             dormitorios: p.suite_amount,
             baños: p.bathroom_amount,
-            supCubierta: p.roofed_surface,                
-            supSemiCub: p.semiroofed_surface,
-            supDescubierta: p.unroofed_surface,
-            supTotal: p.total_surface,
-            supÑote: p.surface,          
+            supCubierta: supCubierta,
+            supSemiCub: supSemiCub,
+            supDescubierta: supDescubierta,
+            supTotal: supTotal,
+            //supÑote: p.surface,          
             unidadMedida: p.surface_measurement, /* M2 o HA(hectarea) SOLO p/lotes*/
             tipo: {
                 codigo: p.type.code,
@@ -83,6 +94,10 @@ const normalizaProps = (propiedades) => {
 };
 
 const normalizoPropiedad = (p) => {
+    const supCubierta = normalizaMetrosCuadrados(p.roofed_surface); console.log(supCubierta);
+    const supSemiCub = normalizaMetrosCuadrados(p.semiroofed_surface);
+    const supDescubierta = normalizaMetrosCuadrados(p.unroofed_surface);
+    const supTotal = normalizaMetrosCuadrados(p.total_surface);
     const newProp = {
         id: p.id,
         codigoReferencia: p.reference_code,
@@ -133,12 +148,12 @@ const normalizoPropiedad = (p) => {
         },
         ambientes: p.room_amount,
         dormitorios: p.suite_amount,
-        baños: p.bathroom_amount,
-        supCubierta: p.roofed_surface,                
-        supSemiCub: p.semiroofed_surface,
-        supDescubierta: p.unroofed_surface,
-        supTotal: p.total_surface,
-        supÑote: p.surface,          
+        baños: p.bathroom_amount,        
+        supCubierta: supCubierta,
+        supSemiCub: supSemiCub,
+        supDescubierta: supDescubierta,
+        supTotal: supTotal,
+        //supÑote: p.surface,
         unidadMedida: p.surface_measurement, /* M2 o HA(hectarea) SOLO p/lotes*/
         tipo: {
             codigo: p.type.code,
