@@ -94,7 +94,7 @@ const normalizaProps = (propiedades) => {
 };
 
 const normalizoPropiedad = (p) => {
-    const supCubierta = normalizaMetrosCuadrados(p.roofed_surface); console.log(supCubierta);
+    const supCubierta = normalizaMetrosCuadrados(p.roofed_surface); 
     const supSemiCub = normalizaMetrosCuadrados(p.semiroofed_surface);
     const supDescubierta = normalizaMetrosCuadrados(p.unroofed_surface);
     const supTotal = normalizaMetrosCuadrados(p.total_surface);

@@ -17,7 +17,7 @@ const url = process.env.URL;
 
 //trae propiedades
 const getProperties = async(req, res) => { 
-    const {limit, offset, operacion, tipo, precioMin, precioMax} = req.query; 
+    const {limit, offset, operacion, tipo, precioMin, precioMax} = req.query; console.log("req.query:",req.query);
     try {
         let resp;
         let total; //total = resp.data.meta.total_count;
