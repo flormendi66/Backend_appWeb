@@ -1,5 +1,0 @@
-cron:
-  - description: "Mantener instancia activa"
-    url: /ping
-    schedule: every 4 hours
-    timezone: America/Argentina/Buenos_Aires

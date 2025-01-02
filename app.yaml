@@ -1,8 +1,0 @@
-runtime: nodejs20
-
-env_variables:
-  API_KEY: "21ba32400d0d3e7c551c128d5363b05d7b1912dd"
-  URL: "https://www.tokkobroker.com/api/v1/property/?lang=es_ar&format=json"
-handlers:
-- url: /.*
-  script: auto

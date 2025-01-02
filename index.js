@@ -4,6 +4,7 @@ const cors = require('cors');
 dotenv.config(); //colocarlo ACÁ!!!!
 //import rutas
 const routerPropiedades = require('./src/Routes/propiedades');
+const routerEmprendimientos = require('./src/Routes/emprendimientos');
 
 const app = express();
 
@@ -12,13 +13,8 @@ app.use(cors());
 
 const port = process.env.PORT || 3001;
 
-//ruta para el archivo cron.yaml
-app.get('/ping', (req, res) => {
-    res.status(200).send('OK');
-});
-
-
 app.use('/propiedades', routerPropiedades);
+app.use('/emprendimientos', routerEmprendimientos);
 
 app.listen(port, () => {
     console.log(`Servidor escuchando en puerto: ${port}`);
