@@ -10,7 +10,12 @@ const normalizaEmprendimientos = (emprendimeintos) => {
         geo_long: e.geo_long,
         locacion: e.location.full_location,
         descripcion: e.description,
-        imagenes: e.photos.map(p => {return p.image}),
+        imagenes: e.photos.map(p => {
+            return {
+                imagen: p.image,
+                imagenChica: p.thumb,
+            }
+        }),
         servicios: e.tags.map(t => {return t.name}),
         tipoProp: e.type.name,
         video: e.videos, //es un []
@@ -29,7 +34,12 @@ const normalizaEmp = (emp) => {
         geo_long: emp.geo_long,
         locacion: emp.location.full_location,
         descripcion: emp.description,
-        imagenes: emp.photos?.map(p => {return p.image}),
+        imagenes: emp.photos.map(p => {
+            return {
+                imagen: p.image,
+                imagenChica: p.thumb,
+            }
+        }),
         servicios: emp.tags?.map(t => {return t.name}),
         tipoProp: emp.type.name,
         video: emp.videos, //es un []
